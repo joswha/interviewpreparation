@@ -38,7 +38,7 @@ def tally(rows):
             values_dict[rows[index + 1]]['points'] += 1
 
     # for t in sorted(sorted(values_dict.values(), key=lambda s:s['Team']), key=lambda r:r['P'], reverse=True
-    values_dict = {key: val for key, val in sorted(values_dict.items(), key=lambda item:(item[1]['points']), reverse=True)}
+    values_dict = {key: val for key, val in sorted(values_dict.items(), key=lambda item:(-item[1]['points'], item[0]))}
 
 
     final_string = "Team                           | MP |  W |  D |  L |  P\n"
