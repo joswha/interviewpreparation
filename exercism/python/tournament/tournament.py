@@ -6,24 +6,16 @@ def tally(rows):
 
     for row in rows:
         cp_row += (row + '\n')
-
-    # print(cp_row)
-
     rows = cp_row
 
     rows = rows.replace('\n', ';')
     rows = rows.split(';')
-
-    # print(rows)
 
     values_dict = defaultdict(list)
 
     for index in range(0, len(rows)):
         if rows[index] != "" and len(rows[index]) > 4 and rows[index] not in values_dict:
             values_dict[rows[index]] = {'matches_played': 0, 'wins' : 0, 'draws' : 0, 'losses': 0, 'points' : 0}
-
-    # print(values_dict)
-    # print(rows[:-1])
 
     for index in range(0, len(rows[:-1]), 3):
         values_dict[rows[index]]['matches_played'] += 1
@@ -46,7 +38,8 @@ def tally(rows):
             values_dict[rows[index + 1]]['points'] += 1
 
     # for t in sorted(sorted(values_dict.values(), key=lambda s:s['Team']), key=lambda r:r['P'], reverse=True
-    print(sorted(values_dict[key]['points'] for key in values_dict.keys(), reverse= True))
+    values_dict = {key: val for key, val in sorted(values_dict.items(), key=lambda item:(item[1]['points']), reverse=True)}
+
 
     final_string = "Team                           | MP |  W |  D |  L |  P\n"
 
@@ -62,7 +55,7 @@ def tally(rows):
     for final_string_value in final_string.split('\n'):
         final_array.append(final_string_value)
     
-    # return final_array[:-1]
+    return final_array[:-1]
 
 
     
