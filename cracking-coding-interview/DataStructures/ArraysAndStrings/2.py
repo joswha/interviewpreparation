@@ -6,7 +6,7 @@ def hashing(word):
         sum += ord(letter)
     return sum
 
-
+# alternate solution would have been with two dictionaries for each letter of each word.
 def check(word1, word2):
     if len(word1) == len(word2) and hashing(word1) == hashing(word2):
         return True
