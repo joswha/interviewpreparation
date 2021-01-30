@@ -127,6 +127,8 @@ def remove_value(llist, value):
 #####################################################################################################
 ##################################################################################################### 
 
+# Given a linked list which might contain a loop, implement an algorithm that returns the node at the beginning of the loop(if it exists)
+
 node1 = Node("a")
 node2 = Node("c")
 node3 = Node("e")
