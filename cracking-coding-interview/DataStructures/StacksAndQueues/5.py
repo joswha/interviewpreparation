@@ -1,3 +1,5 @@
+# Program to sort a stack such that the smallest items are on the top. YOu can use an additional temporray stack, but may not copy the elements into any other data structures.
+
 def peek(stack):
     if stack:
         return stack[-1]
