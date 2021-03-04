@@ -16,9 +16,12 @@ def n_queens(n):
                     col_placement[row] = col
                     solve_n_queens(row + 1)
 
-    result = [[]]
+    result = []
     col_placement = [0] * n
     solve_n_queens(0)
     return result
 
-print(n_queens(4))
+def nr_n_queens(n):
+    print(len(n_queens(n)))
+
+nr_n_queens(4)
