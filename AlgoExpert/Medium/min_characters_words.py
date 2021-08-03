@@ -1,6 +1,7 @@
 def minimumCharactersForWords(words):
     dicts = [dict() for i in range(len(words))]
     res = {}
+    final = []
     
     for index, word in enumerate(words):
         for char in word:
@@ -16,4 +17,9 @@ def minimumCharactersForWords(words):
             else:
                 res[key] = val
 
-    return res
+    for key in res.keys():
+        while res[key] > 0:
+            final.append(key)
+            res[key] -= 1
+
+    return final
